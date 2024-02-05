@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.active {
+    color: rgb(0, 0, 255);
+    border: none;
+}
+
+@layer components {
+    .btn-badge {
+        @apply inline-flex ml-4 px-3 py-2 rounded-md text-xl font-medium text-black hover:text-green-400;
+    }
+
+    .btn-badge-mb {
+        @apply mt-1 block px-3 py-2 rounded-md text-black font-medium focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out
+    }
+}
