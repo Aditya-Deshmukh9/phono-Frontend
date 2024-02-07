@@ -54,7 +54,7 @@ function App() {
             <Link to={"/cart"} className="flex h-14 w-14 items-center">
               <IoMdCart
                 size={32}
-                color="black"
+                color="white"
                 className="cursor-pointer shadow-xl"
               />
 
