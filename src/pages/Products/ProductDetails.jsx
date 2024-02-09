@@ -18,16 +18,19 @@ function ProductDetails() {
     if (data && data.response) {
       const filterProducts = data.response.filter((e) => e.id == id);
       setItem(filterProducts[0] || {});
+      console.log(filterProducts[0]);
 
       if (filterProducts.length > 0) {
+        const currentProduct = filterProducts[0];
         const relatedCategoryProducts = data.response.filter(
-          (e) => e.category === filterProducts[0].category
+          (e) =>
+            e.category === currentProduct.category && e.id !== currentProduct.id
         );
         setRelatedProducts(relatedCategoryProducts);
       }
     }
   }, [data, id]);
-  console.log(relatedProducts);
+
   const sendtocart = (e) => {
     dispatch(addToCart(e));
   };
@@ -131,10 +134,11 @@ function ProductDetails() {
       </h1>
       <div className="min-h-screen flex justify-center mx-2">
         <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {relatedProducts &&
-            relatedProducts.map((e, index) => (
-              <Products items={e} key={index} />
-            ))}
+          {relatedProducts.length > 1
+            ? relatedProducts.map((e, index) => (
+                <Products items={e} key={index} />
+              ))
+            : "No Related products Available"}
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ function Products({ items }) {
   return (
     <Link
       to={`/mobiles/${items.id}`}
-      className="mx-auto flex w-full max-w-lg flex-col items-center justify-center"
+      className="mx-auto flex w-full cursor-pointer max-w-lg flex-col items-center justify-center"
     >
       <img
         className="h-72 w-full rounded-md object-cover xl:h-80"

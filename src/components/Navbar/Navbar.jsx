@@ -18,9 +18,9 @@ function App() {
   return (
     <>
       <nav>
-        <div className="flex h-[80px] w-full text-white items-center justify-between bg-indigo-500 sm:px-8 px-2 md:h-[70px]">
+        <div className="flex z-[999] h-[80px] w-full text-white items-center justify-between bg-indigo-500 sm:px-8 px-2 md:h-[70px]">
           <div className="flex items-center justify-between md:justify-start">
-            <img className="h-6 cursor-pointer md:h-9" src={logo} alt="" />
+            <img className="h-6 cursor-pointer md:h-9" src={logo} alt="logo" />
             <div className="flex gap-5 italic font-mono uppercase md:ml-8">
               <NavLink
                 to="/"
@@ -101,29 +101,18 @@ function App() {
       {!toggle ? (
         <div className="h-screen w-full italic absolute top-20 sm:hidden bg-blue-400 flex flex-col items-center gap-10 font-mono uppercase">
           <Link
-            to="#"
+            to="/"
             className="sm:hidden border-white delay-75 duration-100 ease-in-out hover:border-b-2 md:inline-block mt-6"
           >
-            Dashboard
+            Home
           </Link>
           <Link
-            to="#"
+            to="/mobiles"
             className="sm:hidden border-white delay-75 duration-100 ease-in-out hover:border-b-2 md:inline-block"
           >
-            Team
+            Mobiles
           </Link>
-          <Link
-            to="#"
-            className="sm:hidden border-white delay-75 duration-100 ease-in-out hover:border-b-2 md:inline-block"
-          >
-            Projects
-          </Link>
-          <Link
-            to="#"
-            className="sm:hidden border-white delay-75 duration-100 ease-in-out hover:border-b-2 md:inline-block"
-          >
-            Calendar
-          </Link>
+
           <Link
             className="bg-orange-400 border rounded-2xl px-2 font-mono"
             to={"/register"}

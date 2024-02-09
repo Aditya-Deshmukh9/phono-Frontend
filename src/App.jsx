@@ -12,12 +12,14 @@ import { Toaster } from "react-hot-toast";
 import Practice from "./pages/Practice";
 import ProductDetails from "./pages/Products/ProductDetails";
 import SearchProducts from "./pages/SearchPage/SearchProducts";
+import SmallCart from "./components/SmaillCart";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
+      <SmallCart />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/mobiles" element={<Mobile />} />
